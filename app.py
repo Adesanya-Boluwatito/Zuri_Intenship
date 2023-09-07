@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/api', methods=['GET'])
 def get_info():
     slack_name = request.args.get('slack_name')
     track = request.args.get('track')
