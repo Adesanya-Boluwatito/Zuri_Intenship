@@ -6,15 +6,15 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/info', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_info():
     slack_name = request.args.get('slack_name')
     track = request.args.get('track')
 
     current_day = datetime.datetime.now(pytz.utc).strftime('%A')
-    current_time_utc = datetime.datetime.now(pytz.utc).strftime('%Y-%m-%d %H: %M: %S %Z')
+    current_time_utc = datetime.datetime.now(pytz.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
-    github_url_file = ""
+    github_url_file = "https://github.com/Adesanya-Boluwatito/Zuri_Internship/blob/main/app.py"
     github_repo_url = "https://github.com/Adesanya-Boluwatito/Zuri_Internship"
 
     response_data = {
